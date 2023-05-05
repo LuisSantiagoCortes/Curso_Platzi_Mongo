@@ -1,0 +1,14 @@
+use("Platzi_store")
+
+db.products.updateOne(
+    // filtro del Id que se quiere acutalizar
+    // solo se utiliza ObjectId cuando el _id es creado automaticamente
+    {_id : ObjectId("64555416b57de77cbdfee70a")},
+
+    // Parametros a atualizar
+    { $inc : {
+        qty : 50}
+    }
+    )
+
+

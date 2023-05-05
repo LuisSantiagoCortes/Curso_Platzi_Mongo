@@ -1,0 +1,19 @@
+use("Platzi_store")
+
+db.products.updateOne(
+    // filtro del Id que se quiere acutalizar
+    {_id : 2},
+
+    // Parametros a atualizar
+    { $set : {
+        item :{ name: "item ab", 
+              code: "555", 
+              description : "Single line description."    
+            },
+        name : 'change name #2',
+        qty : 50}
+
+    }
+    )
+
+
