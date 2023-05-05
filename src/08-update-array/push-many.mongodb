@@ -1,0 +1,10 @@
+use("Platzi_store")
+
+db.inventory.updateOne({_id: 4}, {
+  $push: {
+    tags:{
+      $each:["headphone","wireless"]
+    }
+  }
+})
+db.inventory.find()

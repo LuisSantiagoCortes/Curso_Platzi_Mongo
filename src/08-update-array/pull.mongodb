@@ -1,0 +1,10 @@
+use("Platzi_store")
+
+// QUITAR ELEMENTO AL FINAL DEL ARRAY
+db.inventory.updateOne(
+    {_id : 4},
+    {
+    $pull : {
+        tags : "headphone"
+    }}
+)

@@ -1,0 +1,10 @@
+use("Platzi_store")
+
+// AGREGA ELEMENTO AL FINAL DEL ARRAY
+db.inventory.updateOne(
+    {_id : 4},
+    {
+    $push : {
+        tags : "headphone"
+    }}
+)

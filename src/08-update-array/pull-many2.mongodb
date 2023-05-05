@@ -1,0 +1,11 @@
+use("Platzi_store")
+
+// QUITAR VARIOS PARAMETROS EN UN ARRAY, SIN UTILIZAR NINGUN FILTRO
+db.inventory.updateMany(
+    {},
+    {
+    $pull : {
+        tags : {
+            $in : ["appliance", "school"]}
+    }}
+)

@@ -1,0 +1,10 @@
+use("Platzi_store")
+
+// QUITAR UN ELEMENTO EN UN ARRAY, SIN UTILIZAR EL FILTRO
+db.inventory.updateMany(
+    {},
+    {
+    $pull : {
+        tags : "book"
+    }}
+)
