@@ -1,0 +1,12 @@
+use("sample_training")
+
+db.zips.updateMany(
+    // filtro del Id que se quiere acutalizar
+    {city : "CLEVELAND"},
+    
+    // update operators 
+    {$unset : {
+        my_Attr : ""
+    }
+    }
+)
