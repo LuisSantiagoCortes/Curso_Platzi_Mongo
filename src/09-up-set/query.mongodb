@@ -1,0 +1,4 @@
+use("Platzi_store")
+
+db.iot.find({ sensor: "A001",
+              date: "2022-01-03"})

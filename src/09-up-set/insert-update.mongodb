@@ -1,0 +1,40 @@
+use("Platzi_store")
+
+// Insertar un nuevo campo
+// db.iot.insertOne({
+//     sensor: "A001",
+//     date: "2022-01-03",
+//     readings: [1,2,3,4]
+// })
+
+// Actualizar nuevo campo
+// db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-03"
+//   }, {
+//     $push: {
+//       readings: [2323]
+//     }
+//   })
+
+// eliminar campo mal ingresado
+//   db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-03"
+//   }, {
+//     $pop: {
+//       readings: 1
+//     }
+//   })
+
+
+// Correccion Actualizar nuevo campo
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-03"
+  }, {
+    $push: {
+      readings: 2323
+    }
+  })
+ 
