@@ -1,0 +1,40 @@
+use("Platzi_store")
+
+/*
+$gt (greater than - >)
+$gte (greater than or equal - >=)
+$lt (less than - <)
+$lte (less than or equal - <=)
+*/
+
+
+// $gt (greater than - >)
+// db.inventory.find({
+//     qty: {
+//         $gt: 25
+//     }
+// })
+
+
+// $gte (greater than or equal - >=)
+// db.inventory.find({
+//     qty: {
+//         $gte: 25
+//     }
+// })
+
+
+// $lt (less than - <)
+// db.inventory.find({
+//     qty: {
+//         $lt: 25
+//     }
+// })
+
+
+// $lte (less than or equal - <=)
+db.inventory.find({
+    qty: {
+        $lte: 25
+    }
+})

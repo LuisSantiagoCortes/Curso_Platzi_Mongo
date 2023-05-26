@@ -1,0 +1,28 @@
+use("Platzi_store")
+
+//  filtrar por rango 
+// db.inventory.find({
+//     qty: {
+//         $gte: 20 ,
+//         $lte: 25
+//     }
+// })
+
+// filtrar por varios items
+// db.inventory.find({
+//     "item.name": "cd",
+//     qty: {
+//         $gte: 20 ,
+//         $lte: 25
+//     }
+// })
+
+
+// filtrar por varios items
+db.inventory.find({
+    "item.name": { $ne: "cd"},
+    qty: {
+        $gte: 20 ,
+        $lte: 25
+    }
+})
