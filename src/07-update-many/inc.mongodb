@@ -5,6 +5,7 @@ db.zips.updateMany(
     {city : "CLEVELAND"},
     
     // update operators 
+    // $inc incrementa el 100 a la variable pop
     {$inc : {
         pop : 1000
     }

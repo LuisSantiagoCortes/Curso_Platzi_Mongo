@@ -5,6 +5,7 @@ db.zips.updateMany(
     {city : "CLEVELAND"},
     
     // update operators 
+    // $rename renombrar la variable myAttr
     {$rename : {
         myAttr : "my_Attr"
     }

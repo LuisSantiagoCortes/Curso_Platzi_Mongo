@@ -5,6 +5,7 @@ db.zips.updateMany(
     {city : "CLEVELAND"},
     
     // update operators 
+    // $set agrega una nueva varable llamada myAttr
     {$set : {
         myAttr : "Hola ssantiago"
     }

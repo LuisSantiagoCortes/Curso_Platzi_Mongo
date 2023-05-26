@@ -5,6 +5,7 @@ db.zips.updateMany(
     {city : "CLEVELAND"},
     
     // update operators 
+    // Elimina la variable my_attr
     {$unset : {
         my_Attr : ""
     }
