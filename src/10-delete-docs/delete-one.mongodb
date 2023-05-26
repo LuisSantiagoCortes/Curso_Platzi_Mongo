@@ -1,0 +1,13 @@
+use("Platzi_store")
+
+// Elimina solo un item
+// db.products.deleteOne({ _id : 1 })
+
+
+// Elimina varios items
+// db.products.deleteMany({
+//     price : 100
+// })
+
+// Elimina todos los items
+db.products.drop()

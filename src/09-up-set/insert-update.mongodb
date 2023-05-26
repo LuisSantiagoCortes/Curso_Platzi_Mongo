@@ -29,12 +29,27 @@ use("Platzi_store")
 
 
 // Correccion Actualizar nuevo campo
+// db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-03"
+//   }, {
+//     $push: {
+//       readings: 2323
+//     }
+//   })
+
+// Correccion Actualizar nuevo campo
 db.iot.updateOne({
-    sensor: "A001",
-    date: "2022-01-03"
-  }, {
-    $push: {
-      readings: 2323
-    }
-  })
+  sensor: "A001",
+  date: "2022-01-05"
+}, {
+  $push: {
+    readings: 1987
+  }
+},{
+  upsert: true
+}
+)
+
+
  
