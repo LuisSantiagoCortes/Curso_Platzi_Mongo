@@ -1,0 +1,30 @@
+use("Platzi_store")
+
+// $eq o equal
+// se puede utilizar de las siguientes formas
+
+// db.inventory.find({
+//     qty : 20
+// })
+
+// db.inventory.find({
+//     qty : { $eq : 20}
+// })
+
+// consultar los subobjetos que contengan ab
+// db.inventory.find({
+//    "item.name" : "ab"
+// })
+
+// db.inventory.find({
+//     "item.name" : { $eq : "ab"}
+//  })
+
+
+
+///////////////////////////////////////////
+// $ne o NO equal
+
+db.inventory.find({
+    qty : { $ne : 20}
+})
