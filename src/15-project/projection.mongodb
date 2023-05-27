@@ -1,0 +1,13 @@
+use("Platzi_store")
+
+// busqueda entre un array que inicie la palabra "S" 
+// la letra "i" ignore si es mayuscula o minuscula
+// La "m" ayuda a ignorar los saltos de linea en una variable
+db.inventory.find({
+    "item.description": {
+        $regex: /^S/im
+    }
+},
+
+// este filtro ayuda solo a mostrar los campos que se quieren visualizar
+{ _id: false, item: true  })

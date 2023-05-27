@@ -1,0 +1,47 @@
+use("Platzi_store")
+
+// busqueda entre un array que contenga la palabra line
+// db.inventory.find({
+//     "item.description": {
+//         $regex: /line/
+//     }
+// })
+
+// busqueda entre un array que contenga la palabra line e ignore si es mayuscula o minuscula
+// db.inventory.find({
+//     "item.description": {
+//         $regex: /LINE/i
+//     }
+// })
+
+
+// busqueda entre un array que termine la palabra line e ignore si es mayuscula o minuscula
+// db.inventory.find({
+//     "item.description": {
+//         $regex: /LINE$/i
+//     }
+// })
+
+
+// busqueda entre un array que inicie la palabra MANY e ignore si es mayuscula o minuscula
+// db.inventory.find({
+//     "item.description": {
+//         $regex: /^MANY/i
+//     }
+// })
+
+
+// busqueda entre un array que inicie la palabra "S" e ignore si es mayuscula o minuscula
+// db.inventory.find({
+//     "item.description": {
+//         $regex: /^S/i
+//     }
+// })
+
+// La "m" ayuda a ignorar los saltos de linea en una variable
+// busqueda entre un array que inicie la palabra "S" e ignore si es mayuscula o minuscula
+db.inventory.find({
+    "item.description": {
+        $regex: /^S/im
+    }
+})

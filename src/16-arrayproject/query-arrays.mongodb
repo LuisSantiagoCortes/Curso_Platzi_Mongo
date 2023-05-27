@@ -1,0 +1,49 @@
+use("Platzi_store")
+
+// $in trae los elementos que se encuentren en la variable, para este caso trae donde se encunetre 20 ó 25
+// db.inventory.find({ qty: {
+//     $in: [20,25]
+// }})
+
+
+// $in trae los elementos que se encuentren en el array, para este caso trae donde se encuentre "book" ó "electronics"
+// db.inventory.find({ tags: {
+//     $in: ["book","electronics"]
+// }})
+
+
+// $nin trae los elementos distintos que se encuentren en el array,para este caso trae donde NO se encuentre "book" ó "electronics"
+// db.inventory.find({ tags: {
+//     $nin: ["book","electronics"]
+// }})
+
+
+// $all trae los elementos iguales que se encuentren en el array,para este caso trae donde se encuentre "book" y "school"
+// db.inventory.find({ tags: {
+//     $all: ["book","school"]
+// }})
+
+
+// $size el tamaño del array
+// db.inventory.find({ tags: {
+//     $size: 2
+// }})
+
+
+// $elementmacth busca dentro de una array con elementos o variables y lo filtra
+// db.survey.find({ results: 
+//     { $elemMatch: 
+//         {product: "xyz"}
+//     } 
+// })
+
+
+// $elementmacth busca dentro de una array con elementos o variables y lo filtra
+db.survey.find({ 
+    results: { 
+        $elemMatch: {
+            product: "xyz",
+            score: { $gt : 7}
+        }
+    } 
+})
