@@ -1,0 +1,32 @@
+use("sample_training")
+
+db.zips.find({
+    pop: {$gte: 100}
+})
+
+
+// sort sirve para organizar los documentos ASC o DESC
+// "1" organiza los datos ASC
+// "-1" organiza los datos DESC
+// projection son las variables a visualizar 
+db.zips
+    .find({ pop: {$gte: 100}})
+    .sort({pop: 1})
+    .projection({ pop: 1,
+                city: 1,
+                _id: 0
+    })
+
+
+
+// sort sirve para organizar los documentos ASC o DESC
+// "1" organiza los datos ASC
+// "-1" organiza los datos DESC
+// projection son las variables a visualizar
+db.zips
+.find({ pop: {$gte: 100}})
+.sort({pop: -1})
+.projection({ pop: 1,
+            city: 1,
+            _id: 0
+})
