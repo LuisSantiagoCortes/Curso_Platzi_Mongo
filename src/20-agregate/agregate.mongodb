@@ -1,0 +1,30 @@
+use("sample_airbnb")
+
+// Realiza el conteo 
+db.listingsAndReviews.aggregate([
+    { $match: {
+        amenities: "Wifi"
+    }},
+    { $project: {
+        address: 1
+    }},
+    { $group: {
+        _id: "$address.country"
+    },
+    }
+])
+
+// Agrupa y hace el conteo 
+db.listingsAndReviews.aggregate([
+    { $match: {
+        amenities: "Wifi"
+    }},
+    { $project: {
+        address: 1
+    }},
+    { $group: {
+        _id: "$address.country",
+        count: {$sum: 1}
+    },
+    }
+])
