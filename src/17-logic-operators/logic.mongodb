@@ -1,2 +1,70 @@
 use("sample_training")
-db.companies.find().count()
+
+// $and implisitic
+db.inspections.find({
+    sector: "Tax Preparers - 891",
+    result: "Unable to Locate"
+}).count()
+
+
+// $and explict
+// todos los $and va a dentro de unos corchetes [{},{},{}]
+db.inspections.find({
+    $and: [
+        {sector: "Tax Preparers - 891"},
+        {result: "Unable to Locate"}
+    ]
+}).count()
+
+// $or
+// todos los $or va a dentro de unos corchetes [{},{},{}]
+db.inspections.find({
+    $or: [
+        {sector: "Tax Preparers - 891"},
+        {result: "Unable to Locate"}
+    ]
+}).count()
+
+
+// $or :  incluye los documentos filtrados, y muestra si existe en uno o en otro
+// todos los $or va a dentro de unos corchetes [{},{},{}]
+db.inspections.find({
+    $or: [
+        {sector: "Tax Preparers - 891"},
+        {result: "Unable to Locate"}
+    ]
+}).count()
+
+
+// $nor : no incluyen los documentos filtrados
+// todos los $nor va a dentro de unos corchetes [{},{},{}]
+db.inspections.find({
+    $nor: [
+        {sector: "Tax Preparers - 891"},
+        {result: "Unable to Locate"}
+    ]
+}).count()
+
+// $nor : no incluyen los documentos filtrados
+// todos los $nor va a dentro de unos corchetes [{},{},{}]
+db.inspections.find({
+    $nor: [
+        {result: "No Violation Issued"},
+        {result: "Unable to Locate"}
+    ]
+}).count()
+
+
+
+// $nor : no incluyen los documentos filtrados
+// todos los $nor va a dentro de unos corchetes [{},{},{}]
+db.inspections.find({
+    $nor: [
+        {result: "No Violation Issued"},
+        {result: "Unable to Locate"}
+    ]
+},
+{
+    result: 1,
+    _id: 0
+})
