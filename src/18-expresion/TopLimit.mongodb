@@ -1,0 +1,12 @@
+use("sample_training")
+
+db.trips.find({
+    $expr: {
+        $eq: ["$start station id","$end station id"]
+    }
+},{
+    "_id": 0,
+    "start station id": 1,
+    "end station id": 1
+}
+).limit(10)
